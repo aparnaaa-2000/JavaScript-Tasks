@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+            
+        
+        body{
+          background-color:rgb(20, 112, 20);
+          height: 100%;
+          width: 100%;
+          text-align: center;
+
+        }
+        
+    </style>
+</head>
+<body>
+    
+  
+    <div class="tittle" >
+        
+       <h3 > ROCK PAPER SCISSOR</h3> 
+       
+        <div class="user">User: <h3   id="num1"></h3></div>
+      
+        <div class="comp">Computer:<h3 id="num2"></h3></div>
+        <h3 id="display"></h3>
+        
+       
+
+        <p>Turn your move</p>
+        
+       <button class="submit" id="button" onclick="buttonclick('rock')" ><img src="https://www.seekpng.com/png/detail/816-8161371_rock-paper-scissor-icon-png.png" style="height: 100px; width: 100px; top: 100px;" class="image1" >
+      <button class="submit" id="button" onclick="buttonclick('paper')" > <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210705223645/paper.jpeg"  style="height: 100px; width: 100px; top: 100px;" class="image2">
+       <button class="submit" id="button" onclick="buttonclick('scissor')"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuKykdRbbEnEyUKLa_M0EnPAVatufKV2ntgGO9YP4hDNFUWFKBcFqr1P43uxLYkp8JPGg&usqp=CAU" style="height: 100px; width: 100px; top: 100px;" class="image3">
+       </div>
+      ->
+    
+        
+    </div>
+    
+    <script>
+      let data=["rock","paper","scissor"];
+      userpoints=0;
+      computerpoints=0;
+
+        function buttonclick(value){
+        let number =Math.floor(Math.random()*3)
+        let sysdata= data[number];
+        console.log(sysdata);
+
+  
+
+        // document.getElementById('display').value=userdata;
+        let userdata=value;
+        console.log(userdata);
+
+        // document.getElementById('display').value=sysdata;
+
+  if (userdata === sysdata) {
+document.getElementById('display').innerHTML='tie'
+  }
+
+  else if (userdata === "rock" && sysdata === "scissors") {
+    document.getElementById('display').innerHTML='You win'
+    userpoints++
+  }
+
+  else if (userdata === "scissors" && sysdata === "paper") {
+    document.getElementById('display').innerHTML='You win'
+    userpoints++
+  }
+
+  else if (userdata === "paper" && sysdata === "rock") {
+    document.getElementById('display').innerHTML='You win'
+    userpoints++
+  
+  }
+
+  else if (userdata === "scissors" && sysdata === "rock") {
+    document.getElementById('display').innerHTML='Computer win'
+    computerpoints++
+  }
+
+  else if (userdata === "paper" && sysdata === "scissors") {
+    document.getElementById('display').innerHTML='Computer win'
+    computerpoints++
+   
+  }
+
+  else if (userdata === "rock" && sysdata === "paper") {
+    document.getElementById('display').innerHTML='Computer win'
+    computerpoints++
+    
+  }
+document.getElementById('num1').innerHTML=userpoints;
+document.getElementById('num2').innerHTML=computerpoints;
+
+
+if (userpoints ==5||computerpoints ==5){
+    if(userpoints ==5){
+        alert('You win')
+    }
+    else if(computerponts ==5){
+        alert('Computer win')
+    }
+}
+
+
+}
+    </script>         
+
+ 
+    
+</body>
+</html>
